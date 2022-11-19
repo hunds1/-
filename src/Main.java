@@ -18,12 +18,14 @@ public class Main{
 
             divElements.forEach(divElement ->{
                 String onclick = divElement.attr("onclick");
-                System.out.println("https://www.logobook.ru/prod_show." + " | " + onclick);
+
+
+                System.out.println("Ссылки на котегории книг: " + "https://www.logobook.ru/prod_show." + " | " + onclick); //йоптыть
             });
 
             aElements.forEach(aElement ->{
                 String a = aElement.attr("href");
-                System.out.println(a);
+                System.out.println("Ссылка: " + a);
             });
 
             imgElements.forEach(imgElement ->{
@@ -31,7 +33,7 @@ public class Main{
                 if (onclick.contains("https://www."))
                     return;
                 else
-                    System.out.println("https://www.logobook.ru/"+onclick);
+                    System.out.println("Картинка: " + "https://www.logobook.ru/"+onclick);
             });
 
         }catch (Exception e){
