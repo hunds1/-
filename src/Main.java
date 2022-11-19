@@ -10,7 +10,7 @@ import java.util.List;
 public class Main{
     public static void main(String[] args) {
         try {
-            Document doc = Jsoup.connect("https://www.logobook.ru/").get();
+            Document doc = Jsoup.connect("https://www.logobook.ru/").get();  //йоптыть
 
             Elements imgElements = doc.select("img");
             Elements aElements = doc.select("a");
@@ -18,9 +18,8 @@ public class Main{
 
             divElements.forEach(divElement ->{
                 String onclick = divElement.attr("onclick");
-
-
-                System.out.println("Ссылки на котегории книг: " + "https://www.logobook.ru/prod_show." + " | " + onclick); //йоптыть
+                String[] onclickSplit = onclick.split("\"");
+                System.out.println("Ссылки на котегории книг: " + "https://www.logobook.ru/prod_show." + onclickSplit[1]);
             });
 
             aElements.forEach(aElement ->{
